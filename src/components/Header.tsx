@@ -1,22 +1,30 @@
-import { AppBar, Box, Typography } from '@mui/material';
+
 import React from 'react';
 import styled from 'styled-components';
-import { Current_Line, Selection } from '../colours';
+import { Current_Line, Foreground, Selection } from '../colours';
 
 export const Header = () => (
   <HeaderBox>
     <HeaderBar>
-      <Typography variant="h3" component="div">Anton Ego</Typography>
+      <Title>Anton Ego</Title>
     </HeaderBar>
   </HeaderBox>
 )
 
-const HeaderBox = styled(Box)`
+const Title = styled.h1`
+  color: ${Foreground};
+  font-size: 50px;
+  margin: 0;
+  margin-bottom: 16px;
+`
+
+const HeaderBox = styled.div`
   display: flex;
   flex-grox: 1;
+  width: 100%;
 `
-const HeaderBar = styled(AppBar)`
-  padding: 16px;
+const HeaderBar = styled.div`
+  padding-left: 32px;
   background-color: ${Current_Line};
-  text-colour: ${Selection};
+  width: 100%;
 `
