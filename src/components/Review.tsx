@@ -5,6 +5,7 @@ import { Emph } from './Emph';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import '@tensorflow/tfjs-backend-cpu';
 import '@tensorflow/tfjs-backend-webgl';
+import { EgoPondersGif, EgoFlashBackGif, EgoWineEjectionGif } from "./Gif";
 
 const mediaBreakpoint = '850px';
 
@@ -54,13 +55,17 @@ export type ReviewProps = {
 
 export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
   const [foodClassification, setFoodClassification] = useState<null | string>(null);
-  
+  const [reviewSentiment, setReviewSentiment] = useState<'good' | 'bad'>('good');
+
   useEffect(() => {
     const classifyImage = async () => {
       const model = await mobilenet.load({version: 2, alpha: 0.5});
       const image = new Image();
       image.src = imageUrl!;
       const predictions = await model.classify(image);
+      // !! PLEASE SET THE REVIEW SENTIMENT HERE!
+      //setReviewSentiment('good');
+      // !! IMPORTANT
       setFoodClassification(predictions[0].className.split(",")[0]);
     }
     if (imageUrl !== null) {
@@ -105,11 +110,17 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
         <FoodImage src={imageUrl}/>
       </FoodCard>
       <ReviewCard>
-        {!foodClassification && <p>Ego ponders...</p>}
+        {!foodClassification && 
+        <div>
+          <EgoPondersGif/>
+          <p>Ego ponders...</p>
+        </div>}
         {foodClassification && 
           <>
+          {reviewSentiment == 'good' && <EgoFlashBackGif/>}
+          {reviewSentiment == 'bad' && <EgoWineEjectionGif/>}
           <span>Looks like <Emph>{foodClassification}</Emph></span><br/><br/>
-          {getReview('good')}
+          {getReview(reviewSentiment)}
           </>
         }
       </ReviewCard> 
