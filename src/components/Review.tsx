@@ -79,18 +79,19 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
 
   const FoodImage = styled.img`
     width: 100%;
-    height: 100%;
+    height: auto;
   `;
 
   const FoodCard = styled(Card)`
-    width: 30%;
+    width: 50%;
     @media (max-width: 800px) {
       width: 100%;
     }
+    height: fit-content;
   `
 
   const ReviewCard = styled(Card)`
-    width: 70%;
+    width: 50%;
     @media (max-width: 800px) {
       width: 100%;
     }
