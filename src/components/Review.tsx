@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Card } from "./Card";
 import { Emph } from './Emph';
+import * as mobilenet from '@tensorflow-models/mobilenet';
+import '@tensorflow/tfjs-backend-cpu';
+import '@tensorflow/tfjs-backend-webgl';
 
 const mediaBreakpoint = '850px';
 
@@ -50,12 +53,26 @@ export type ReviewProps = {
 }
 
 export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
+  const [foodClassification, setFoodClassification] = useState<null | string>(null);
+  
+  useEffect(() => {
+    const classifyImage = async () => {
+      const model = await mobilenet.load({version: 2, alpha: 0.5});
+      const image = new Image();
+      image.src = imageUrl!;
+      const predictions = await model.classify(image);
+      setFoodClassification(predictions[0].className.split(",")[0]);
+    }
+    if (imageUrl !== null) {
+      classifyImage(); 
+    }
+  } ,[imageUrl]);
+
   const ReviewContainer = styled.div`
     width: 100%;
     display: flex;
     column-gap: 32px;
-    
-    @media (max-width: ${mediaBreakpoint}) {
+    @media (max-width: 800px) {
       flex-direction: column;
       width: 90%;
       row-gap: 32px;
@@ -64,21 +81,20 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
 
   const FoodImage = styled.img`
     width: 100%;
-    height: 100%;
+    height: auto;
   `;
 
   const FoodCard = styled(Card)`
-    width: 30%;
-
-    @media (max-width: ${mediaBreakpoint}) {
+    width: 50%;
+    @media (max-width: 800px) {
       width: 100%;
     }
+    height: fit-content;
   `
 
   const ReviewCard = styled(Card)`
-    width: 70%;
-
-    @media (max-width: ${mediaBreakpoint}) {
+    width: 50%;
+    @media (max-width: 800px) {
       width: 100%;
     }
   `
@@ -89,11 +105,14 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
         <FoodImage src={imageUrl}/>
       </FoodCard>
       <ReviewCard>
-        {getReview('good')}
-      </ReviewCard>
-        
+        {!foodClassification && <p>Ego ponders...</p>}
+        {foodClassification && 
+          <>
+          <span>Looks like <Emph>{foodClassification}</Emph></span><br/><br/>
+          {getReview('good')}
+          </>
+        }
+      </ReviewCard> 
     </ReviewContainer>
   )
 }
-
-
