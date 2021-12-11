@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/ego/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/ego/static/js/main.fbfd8729.chunk.js",
-    "main.js.map": "/ego/static/js/main.fbfd8729.chunk.js.map",
-    "runtime-main.js": "/ego/static/js/runtime-main.17103069.js",
-    "runtime-main.js.map": "/ego/static/js/runtime-main.17103069.js.map",
-    "static/js/2.9a0dd846.chunk.js": "/ego/static/js/2.9a0dd846.chunk.js",
-    "static/js/2.9a0dd846.chunk.js.map": "/ego/static/js/2.9a0dd846.chunk.js.map",
-    "static/js/3.8762c0bd.chunk.js": "/ego/static/js/3.8762c0bd.chunk.js",
-    "static/js/3.8762c0bd.chunk.js.map": "/ego/static/js/3.8762c0bd.chunk.js.map",
+    "main.js": "/ego/static/js/main.e2d0c452.chunk.js",
+    "main.js.map": "/ego/static/js/main.e2d0c452.chunk.js.map",
+    "runtime-main.js": "/ego/static/js/runtime-main.20dddeeb.js",
+    "runtime-main.js.map": "/ego/static/js/runtime-main.20dddeeb.js.map",
+    "static/js/2.3e612fdc.chunk.js": "/ego/static/js/2.3e612fdc.chunk.js",
+    "static/js/2.3e612fdc.chunk.js.map": "/ego/static/js/2.3e612fdc.chunk.js.map",
+    "static/js/3.d0f10122.chunk.js": "/ego/static/js/3.d0f10122.chunk.js",
+    "static/js/3.d0f10122.chunk.js.map": "/ego/static/js/3.d0f10122.chunk.js.map",
     "index.html": "/ego/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/ego/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.9a0dd846.chunk.js.LICENSE.txt": "/ego/static/js/2.9a0dd846.chunk.js.LICENSE.txt",
+    "static/js/2.3e612fdc.chunk.js.LICENSE.txt": "/ego/static/js/2.3e612fdc.chunk.js.LICENSE.txt",
     "static/media/Ego.cdfd12cf.webp": "/ego/static/media/Ego.cdfd12cf.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.17103069.js",
-    "static/js/2.9a0dd846.chunk.js",
+    "static/js/runtime-main.20dddeeb.js",
+    "static/js/2.3e612fdc.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.fbfd8729.chunk.js"
+    "static/js/main.e2d0c452.chunk.js"
   ]
 }
