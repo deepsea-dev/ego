@@ -22,7 +22,7 @@ function App() {
         {!imageUrl && <Card>
           <SubmitButton setImageUrl={setImageUrl}/>
         </Card>}
-        {imageUrl && <Review imageUrl={imageUrl} reviewContent={<span>yum yum in my tum tum</span>}/>}
+        {imageUrl && <Review imageUrl={imageUrl}/>}
       </Body>  
       <EgoImage src={Ego} alt={"Anton Ego"} />
     </Wrapper>
