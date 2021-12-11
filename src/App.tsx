@@ -4,6 +4,7 @@ import { Background } from './colours';
 import { Card } from './components/Card';
 import { Emph } from './components/Emph';
 import { Header } from './components/Header';
+import { SubmitButton } from './components/SubmitButton';
 import Ego from './images/Ego.webp';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
       <Body>
         <Card>
           After reading a lot of <Emph>overheated puffery </Emph> about your new cook, you know what I'm craving? A little <Emph>perspective</Emph>. That's it. I'd like some <Emph>fresh</Emph>, <Emph>clear</Emph>, <Emph>well-seasoned perspective</Emph>.
+        </Card>
+        <Card>
+          <SubmitButton/>
         </Card>
       </Body>  
       <EgoImage src={Ego} alt={"Anton Ego"} />
@@ -38,6 +42,8 @@ const Body = styled.div`
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  row-gap: 32px;
+  align-content: center;
 `;
 
 const EgoImage = styled.img`
