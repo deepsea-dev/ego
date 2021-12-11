@@ -108,7 +108,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
         <FoodImage src={imageUrl}/>
       </FoodCard>
       <ReviewCard>
-<<<<<<< HEAD
         {!foodClassification && 
         <div>
           <EgoPondersGif/>
@@ -123,11 +122,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
           </>
         }
       </ReviewCard> 
-=======
-        {getReview('bad')}
-      </ReviewCard>
-        
->>>>>>> fe49742 (Added synonyms)
     </ReviewContainer>
   )
 }
