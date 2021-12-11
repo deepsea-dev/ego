@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Background } from './colours';
 import { Card } from './components/Card';
@@ -8,6 +8,8 @@ import { SubmitButton } from './components/SubmitButton';
 import Ego from './images/Ego.webp';
 
 function App() {
+  const [imageURL, setImageUrl] = useState<null | string>(null);
+
   return (
   <>
     <Header/>
@@ -17,7 +19,7 @@ function App() {
           After reading a lot of <Emph>overheated puffery </Emph> about your new cook, you know what I'm craving? A little <Emph>perspective</Emph>. That's it. I'd like some <Emph>fresh</Emph>, <Emph>clear</Emph>, <Emph>well-seasoned perspective</Emph>.
         </Card>
         <Card>
-          <SubmitButton/>
+          <SubmitButton setImageUrl={setImageUrl}/>
         </Card>
       </Body>  
       <EgoImage src={Ego} alt={"Anton Ego"} />

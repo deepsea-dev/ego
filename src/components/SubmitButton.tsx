@@ -1,8 +1,12 @@
-import React, { useRef } from "react";
+import React, { ChangeEvent, useRef, useState } from "react";
 import styled from "styled-components";
 import { Current_Line, Foreground, Purple, Red, Yellow } from "../colours";
 
-export const SubmitButton = () => {
+export type SubmitButtonProps = {
+  setImageUrl: (url: string) => void;
+}
+
+export const SubmitButton: React.FC<SubmitButtonProps> = ({setImageUrl}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const StyledButton = styled.button`
@@ -24,9 +28,15 @@ export const SubmitButton = () => {
     }
   }
 
+  const onImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      setImageUrl(URL.createObjectURL(event.target.files[0]));
+    }
+  }
+
   return (
     <>
-      <input ref={inputRef} type="file" hidden/>
+      <input ref={inputRef} type="file" hidden onChange={onImageChange}/>
       <StyledButton onClick={() => handleClick()}>I await your dish...</StyledButton>
     </>
   )
