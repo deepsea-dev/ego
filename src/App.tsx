@@ -79,5 +79,4 @@ const EgoImage = styled.img`
   @media (min-width: 1000px) {
     right: 32px;
   }
-  
 `;

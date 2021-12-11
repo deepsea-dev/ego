@@ -5,7 +5,6 @@ import { Emph } from './Emph';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import '@tensorflow/tfjs-backend-cpu';
 import '@tensorflow/tfjs-backend-webgl';
-import { image } from '@tensorflow/tfjs-core';
 
 const egoReviewArray = `In many ways, the work of a critic is easy. We risk very little yet enjoy a position over those who offer up their work and their selves to our judgment. We thrive on negative criticism, which is fun to write and to read. But the bitter truth we critics must face, is that in the grand scheme of things, the average piece of junk is probably more meaningful than our criticism designating it so.\n But there are times when a critic truly risks something, and that is in the discovery and defense of the new. The world is often unkind to new talent, new creations. The new needs friends.
 
@@ -59,7 +58,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
       const model = await mobilenet.load({version: 2, alpha: 0.5});
       const image = new Image();
       image.src = imageUrl!;
-      console.log(image);
       const predictions = await model.classify(image);
       setFoodClassification(predictions[0].className.split(",")[0]);
     }
@@ -72,7 +70,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
     width: 100%;
     display: flex;
     column-gap: 32px;
-    
     @media (max-width: 800px) {
       flex-direction: column;
       width: 90%;
@@ -87,7 +84,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
 
   const FoodCard = styled(Card)`
     width: 30%;
-
     @media (max-width: 800px) {
       width: 100%;
     }
@@ -95,7 +91,6 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
 
   const ReviewCard = styled(Card)`
     width: 70%;
-
     @media (max-width: 800px) {
       width: 100%;
     }
@@ -110,14 +105,11 @@ export const Review: React.FC<ReviewProps> = ({imageUrl}) => {
         {!foodClassification && <p>Ego ponders...</p>}
         {foodClassification && 
           <>
-          <span>Looks like {foodClassification}</span><br/><br/>
+          <span>Looks like <Emph>{foodClassification}</Emph></span><br/><br/>
           {getReview('good')}
           </>
         }
-      </ReviewCard>
-        
+      </ReviewCard> 
     </ReviewContainer>
   )
 }
-
-
