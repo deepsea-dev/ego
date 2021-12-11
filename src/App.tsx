@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Background } from './colours';
 import { Card } from './components/Card';
@@ -10,7 +10,6 @@ import Ego from './images/Ego.webp';
 
 function App() {
   const [imageUrl, setImageUrl] = useState<null | string>(null);
-
   return (
   <>
     <Header/>
@@ -24,7 +23,7 @@ function App() {
         </Card>}
         {imageUrl && <Review imageUrl={imageUrl}/>}
       </Body>  
-      <EgoImage src={Ego} alt={"Anton Ego"} />
+      <EgoImage src={Ego} alt={"Anton Ego"}/>
     </Wrapper>
   </>
   );
