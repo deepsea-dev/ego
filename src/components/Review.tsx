@@ -13,7 +13,7 @@ export const Review: React.FC<ReviewProps> = ({imageUrl, reviewContent}) => {
     display: flex;
     column-gap: 32px;
     
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
       flex-direction: column;
       width: 90%;
       row-gap: 32px;
@@ -28,7 +28,7 @@ export const Review: React.FC<ReviewProps> = ({imageUrl, reviewContent}) => {
   const FoodCard = styled(Card)`
     width: 30%;
 
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
       width: 100%;
     }
   `
@@ -36,7 +36,7 @@ export const Review: React.FC<ReviewProps> = ({imageUrl, reviewContent}) => {
   const ReviewCard = styled(Card)`
     width: 70%;
 
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
       width: 100%;
     }
   `
