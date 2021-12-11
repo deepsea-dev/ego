@@ -15,6 +15,8 @@ export const Review: React.FC<ReviewProps> = ({imageUrl, reviewContent}) => {
     
     @media (max-width: 500px) {
       flex-direction: column;
+      width: 90%;
+      row-gap: 32px;
     }
   `;
 

@@ -52,4 +52,27 @@ const Body = styled.div`
 
 const EgoImage = styled.img`
   height: 85vh;
+  position: fixed;
+
+  @media (min-width: 400px) {
+    right: -100px;
+  }
+
+
+  @media (max-width: 400px) {
+    right: -100px;
+  }
+
+  @media (min-width: 600px) {
+    right: -60px;
+  }
+
+  @media (min-width: 800px) {
+    right: -20px;
+  }
+
+  @media (min-width: 1000px) {
+    right: 0px;
+  }
+  
 `;
