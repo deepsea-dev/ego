@@ -35,6 +35,9 @@ export default App;
 const Wrapper = styled.div`
   padding-top: 40px;
   margin-left: 50px;
+  @media (max-width: 450px) {
+    margin-left: 24px;
+  }
   display: flex;
   height: 100%;
   justify-content: space-between;
@@ -47,6 +50,9 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+  @media (max-width: 450px) {
+    row-gap: 24px;
+  }
   align-content: center;
 `;
 

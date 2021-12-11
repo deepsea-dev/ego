@@ -9,5 +9,13 @@ export const Card = styled.div`
     font-size: 32px;
     color: ${Comment};
     font-weight: bolder;
+
+    @media (max-width: 600px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 16px;
+    }
   }
 `

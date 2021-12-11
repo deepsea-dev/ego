@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useRef, useState } from "react";
 import styled from "styled-components";
 import { Current_Line, Foreground, Purple, Red, Yellow } from "../colours";
+import { Emph } from "./Emph";
 
 export type SubmitButtonProps = {
   setImageUrl: (url: string) => void;
@@ -37,7 +38,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({setImageUrl}) => {
   return (
     <>
       <input ref={inputRef} type="file" hidden onChange={onImageChange}/>
-      <StyledButton onClick={() => handleClick()}>I await your dish...</StyledButton>
+      <StyledButton onClick={() => handleClick()}><Emph>I await your dish...</Emph></StyledButton>
     </>
   )
 }
