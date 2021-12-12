@@ -2,7 +2,7 @@
   "name": "ego",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://deepsea-dev.github.io/ego/",
+  "homepage": "http://antonego.tech/",
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.1.0",
     "@tensorflow/tfjs": "^3.12.0",
