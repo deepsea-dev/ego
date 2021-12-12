@@ -21,7 +21,7 @@ let words = {
 
 const foods = {
   'good': ['strawberry', 'orange', 'lemon', 'fig', 'pineapple', 'banana', 'jackfruit', 'custard apple', 'pomegranate', 'sweet potato', 'triceratops', 'honeycomb', 'bell pepper', 'head cabbage', 'cauliflower', 'zucchini', 'courgette', 'spaghetti squash', 'butternut squash', 'cucumber', 'mushroom', 'hot pot', 'hotpot', 'trifle', 'red wine', 'drumstick', 'guacamole', 'water jug', 'soup bowl', 'eggnog', 'shoji', 'French loaf', 'milk can', 'hotdog', 'hot dog', 'red hot', 'burrito', 'nipple', 'espresso', 'pizza', 'pizza pie', 'chocolate sauce', 'chocolate syrup', 'water bottle', 'ice lolly', 'lolly', 'lollipop', 'popsicle', 'ice cream', 'icecream', 'pretzel', 'coffee mug'],
-  'bad': ['ananas', 'jak', 'jack', 'acorn', 'rapeseed', 'corn', 'buckeye', 'horse chestnut', 'conker', 'ocarina', 'goose', 'eel', 'mashed potato', 'broccoli', 'acorn squash', 'cuke', 'artichoke', 'globe artichoke', 'cardoon', 'meat loaf', 'meatloaf', 'hay', 'wine bottle', 'dough', 'coral fungus', 'pill bottle', 'overskirt', 'cheeseburger']
+  'bad': ['carbonara', 'ananas', 'jak', 'jack', 'acorn', 'rapeseed', 'corn', 'buckeye', 'horse chestnut', 'conker', 'ocarina', 'goose', 'eel', 'mashed potato', 'broccoli', 'acorn squash', 'cuke', 'artichoke', 'globe artichoke', 'cardoon', 'meat loaf', 'meatloaf', 'hay', 'wine bottle', 'dough', 'coral fungus', 'pill bottle', 'overskirt', 'cheeseburger']
 }
 
 const getSentimentFromFoodRandom = (match: string): 'good' | 'bad' | 'inedible' => {
