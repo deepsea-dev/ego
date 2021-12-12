@@ -5,14 +5,14 @@ import { Emph } from './Emph';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import '@tensorflow/tfjs-backend-cpu';
 import '@tensorflow/tfjs-backend-webgl';
-import { EgoPondersGif, EgoFlashBackGif, EgoWineEjectionGif } from "./Gif";
+import { EgoPondersGif, EgoFlashBackGif, EgoWineEjectionGif, EgoWalksOutGif } from "./Gif";
 
 const mediaBreakpoint = '850px';
 
 const egoReviewArray = `I have experienced something %s, %s from a singularly unexpected source. To say that both the meal and its maker have challenged my preconceptions about %s is a gross understatement. They have rocked me to my core. In the past, I have made no secret of my disdain for Chef Gusteau's famous motto: 'Anyone can cook.' But I realize, only now do I truly understand what he meant. %s. It is difficult to imagine more humble origins than those of the %s now cooking at Gusteau's, who is, in this critic's opinion, nothing %s than the %s chef in France. I %s to Gusteau's soon, %s.`.split(/%s/g);
 
-const egoInedibleReviewArray = `%s. Since you're all out of %s and no one else seems to have it in this %s, I'll make you a deal. You provide the food, I'll provide the perspective, which would go nicely with a %s.\n I don't %s food; I %s it. If I don't love it, I don't %s.\n I will return tomorrow night with high expectations. Pray you don't disappoint me.`.split(/%s/g);
-const inEdibleWords = [['Very well', 'How dissapointing', 'My dissapointment is immeasurable and my day is ruined'], ['perspective'], ['BLOODY TOWN'], ['bottle of Cheval Blanc 1947', 'side of suffering'], ['like'], ['LOVE'], ['swallow']];
+const egoInedibleReviewArray = `%s. Since you're all out of %s and no one else seems to have it in this %s, I'll make you a deal. You provide the food, I'll provide the perspective, which would go nicely with a %s.\n I don't %s food; I %s it. If I don't love it, I don't %s.\n I will return tomorrow night with high expectations. %s.`.split(/%s/g);
+const inEdibleWords = [['Very well', 'How dissapointing', 'My dissapointment is immeasurable and my day is ruined'], ['perspective'], ['BLOODY TOWN'], ['bottle of Cheval Blanc 1947', 'side of suffering'], ['like'], ['LOVE'], ['swallow'], ['Pray you don\'t disappoint me']];
 
 let words = {
   'good': [['good', 'amazing', 'excellent', 'divine'], ['an extra-ordinary meal', 'a tasty meal', 'a good nourisment'], ['fine-cooking', 'cooking', 'combining ingredients'], ['Not everyone can become a great artist, but a great artist can come from anywhere'], ['genius', 'excellent chef'], ['less'], ['finest'], ['will be returning', 'can\'t wait for my next trip'], ['hungry for more', 'stomach waiting to be filled']],
@@ -28,7 +28,7 @@ const getSentimentFromFoodRandom = (match: string): 'good' | 'bad' | 'inedible' 
   let sentiment: string;
 
   if (foods['good'].includes(match))
-    sentiment = Math.random() > 0.3 ? 'good' : 'bad';
+    sentiment = Math.random() > 0.2 ? 'good' : 'bad';
   else if (foods['bad'].includes(match))
     sentiment = Math.random() > 0.7 ? 'good' : 'bad';
   else
@@ -142,9 +142,21 @@ export const Review: React.FC<ReviewProps> = ({ imageUrl }) => {
           </div>}
         {reviewSentiment &&
           <>
-            {reviewSentiment === 'good' && <EgoFlashBackGif />}
-            {reviewSentiment === 'bad' && <EgoWineEjectionGif />}
-            <span>Looks like <Emph>{foodClassification}</Emph></span><br /><br />
+            {reviewSentiment === 'good' && 
+            <>
+              <span>My favourite a <Emph>{foodClassification}</Emph></span><br /><br />
+              <EgoFlashBackGif />
+            </>}
+            {reviewSentiment === 'bad' && 
+            <>
+              <span>I hate a <Emph>{foodClassification}</Emph></span><br /><br />
+              <EgoWineEjectionGif />
+            </>}
+            {reviewSentiment === 'inedible' && 
+            <>
+              <span>This is no food, this is a <Emph>{foodClassification}</Emph></span><br /><br />
+              <EgoWalksOutGif />
+            </>}
             {getReview(reviewSentiment)}
           </>
         }

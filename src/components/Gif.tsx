@@ -3,6 +3,7 @@ import styled from "styled-components";
 import EgoPondersGifSrc from '../gifs/ponders.mp4';
 import EgoFlashbackGifSrc from '../gifs/flashback.mp4';
 import EgoWineEjectionGifSrc from '../gifs/wineEjection.mp4';
+import EgoWalksOutGifSrc from '../gifs/EgoWalksOut.mp4';
 
 type GifProps = {
   src: string
@@ -23,3 +24,4 @@ const Gif: React.FC<GifProps> = ({src}) => {
 export const EgoPondersGif = () => <Gif src={EgoPondersGifSrc}/>;
 export const EgoFlashBackGif = () => <Gif src={EgoFlashbackGifSrc}/>;
 export const EgoWineEjectionGif = () => <Gif src={EgoWineEjectionGifSrc}/>
+export const EgoWalksOutGif = () => <Gif src={EgoWalksOutGifSrc}/>;
