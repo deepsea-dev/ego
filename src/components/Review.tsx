@@ -11,8 +11,8 @@ const mediaBreakpoint = '850px';
 
 const egoReviewArray = `I have experienced something %s, %s from a singularly unexpected source. To say that both the meal and its maker have challenged my preconceptions about %s is a gross understatement. They have rocked me to my core. In the past, I have made no secret of my disdain for Chef Gusteau's famous motto: 'Anyone can cook.' But I realize, only now do I truly understand what he meant. %s. It is difficult to imagine more humble origins than those of the %s now cooking at Gusteau's, who is, in this critic's opinion, nothing %s than the %s chef in France. I %s to Gusteau's soon, %s.`.split(/%s/g);
 
-const egoInedibleReviewArray = `sssss ff%s. ab%sab`.split(/%s/g);
-const inEdibleWords = [['32e'], ['deded']];
+const egoInedibleReviewArray = `%s. Since you're all out of %s and no one else seems to have it in this %s, I'll make you a deal. You provide the food, I'll provide the perspective, which would go nicely with a %s.\n I don't %s food; I %s it. If I don't love it, I don't %s.\n I will return tomorrow night with high expectations. Pray you don't disappoint me.`.split(/%s/g);
+const inEdibleWords = [['Very well', 'How dissapointing', 'My dissapointment is immeasurable and my day is ruined'], ['perspective'], ['BLOODY TOWN'], ['bottle of Cheval Blanc 1947', 'side of suffering'], ['like'], ['LOVE'], ['swallow']];
 
 let words = {
   'good': [['good', 'amazing', 'excellent', 'divine'], ['an extra-ordinary meal', 'a tasty meal', 'a good nourisment'], ['fine-cooking', 'cooking', 'combining ingredients'], ['Not everyone can become a great artist, but a great artist can come from anywhere'], ['genius', 'excellent chef'], ['less'], ['finest'], ['will be returning', 'can\'t wait for my next trip'], ['hungry for more', 'stomach waiting to be filled']],
