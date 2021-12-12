@@ -149,7 +149,7 @@ export const Review: React.FC<ReviewProps> = ({ imageUrl }) => {
             </>}
             {reviewSentiment === 'bad' && 
             <>
-              <span>I hate a <Emph>{foodClassification}</Emph></span><br /><br />
+              <span>I hate <Emph>{foodClassification}</Emph></span><br /><br />
               <EgoWineEjectionGif />
             </>}
             {reviewSentiment === 'inedible' && 
