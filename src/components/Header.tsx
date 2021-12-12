@@ -4,11 +4,16 @@ import styled from 'styled-components';
 import { Current_Line, Foreground, Selection, Comment, Purple } from '../colours';
 import {ReactComponent as ResetIcon } from '../images/resetIcon.svg';
 
-export const Header = () => (
+export type HeaderProps = {
+  resetCallback: () => void;
+  resetVisible: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({resetCallback, resetVisible}) => (
   <HeaderBox>
     <HeaderBar>
       <Title>Anton Ego</Title>
-      <ResetButton><ResetIcon/></ResetButton>
+      {resetVisible && <ResetButton onClick={resetCallback}><ResetIcon/></ResetButton>}
     </HeaderBar>
   </HeaderBox>
 )

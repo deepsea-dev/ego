@@ -10,9 +10,14 @@ import Ego from './images/Ego.webp';
 
 function App() {
   const [imageUrl, setImageUrl] = useState<null | string>(null);
+
+  const resetCallback = () => {
+    setImageUrl(null);
+  }
+
   return (
   <>
-    <Header/>
+    <Header resetCallback={resetCallback} resetVisible={imageUrl != null}/>
     <Wrapper>
       <Body>
         <Card>
